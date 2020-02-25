@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Sign</title>
+</head>
+<body>
+
+  
+  <svg width="500" height="300">
+    <!-- First Polygon -->
+    <polygon 
+      points="25,5   75,5  100,30  100,80 75,105
+      25,105  0,80  0, 30"
+      style="stroke:gray; fill:#cc3333; stroke-width: 3;">
+    </polygon>
+    <!--Text has to be written outside polygon element to appear over red fill-->
+    <text 
+    x="10" 
+    y="65" 
+    fill="white"
+    font-family="sans-serif"
+    font-size="30"
+    >STOP</text>
+    <!-- Second Polygon   -->
+    <polygon 
+      points="140,5   190,5  215,30  215,80 190,105
+      140,105  115,80  115, 30"
+      style="stroke:gray; fill:#cc3333; stroke-width: 3;">
+    </polygon>
+    <text 
+    x="15" 
+    y="-153" 
+    fill="white"
+    font-family="sans-serif"
+    font-size="30"
+    transform="rotate(90)"
+    >STOP</text>
+
+    <!-- Third polygon -->
+    <polygon 
+      points="250,5   300,5  325,30  325,80 300,105
+      250,105  225,80  225, 30"
+      style="stroke:gray; fill:#cc3333; stroke-width: 3;">
+  </polygon>
+    <text 
+    x="-275" 
+    y="-40" 
+    text-anchor="middle"
+    fill="white"
+    font-family="sans-serif"
+    font-size="30"
+    transform="rotate(180)"
+    >STOP</text>
+
+    <!--Fourth Animated polygon -->
+    <!-- This one was tough, the animateTransform was difficult since there was no easy
+      way to figure out the center point of the polygon to have it spin on it's axis
+      it took playing around with the points to get it right... -->
+    <polygon 
+      points="140,110   190,110  215,135  215,180 190,205
+      140,205  115,180  115, 135"
+      style="stroke:gray; fill:#cc3333; stroke-width: 3;">
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="0 165 160"
+                          to="360 165 160"
+                          dur="2s"
+                          repeatCount="indefinite">                              
+    </polygon>
+    <!--In order for text to rotate I have to embed the animate transform in the text element-->
+    <text
+    x="165" 
+    y="165" 
+    fill="white"
+    font-family="sans-serif"
+    font-size="30"
+    text-anchor="middle"
+    >STOP
+    <animateTransform attributeName="transform"
+    attributeType="XML"
+    type="rotate"
+    from="0 165 160"
+    to="360 165 160"
+    dur="2s"
+    repeatCount="indefinite">  
+  </text>
+    
+
+  </svg>
+
+
+
+</body>
+</html>
